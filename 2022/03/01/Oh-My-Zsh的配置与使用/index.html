@@ -227,14 +227,14 @@
         <h1 id="Oh-My-Zsh的配置与使用"><a href="#Oh-My-Zsh的配置与使用" class="headerlink" title="Oh-My-Zsh的配置与使用"></a>Oh-My-Zsh的配置与使用</h1><h3 id="什么是Shell？"><a href="#什么是Shell？" class="headerlink" title="什么是Shell？"></a>什么是Shell？</h3><p>相对于内核来说，Shell是Linux&#x2F;Unix的一个外壳，它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。<br>简单的说，shell就是那“黑乎乎”的命令行。</p>
 <h4 id="Shell的分类"><a href="#Shell的分类" class="headerlink" title="Shell的分类"></a>Shell的分类</h4><p>Linux&#x2F;Unix提供了很多种Shell，不同的shell具备不同的功能，shell还决定了脚本中函数的语法，Linux中默认的shell是&#x2F;bin&#x2F;bash；</p>
 <p>想知道你的系统有几种shell，可以通过以下命令查看：</p>
-<pre><code class="shell">$ cat /etc/shells
-/bin/bash  
-/bin/csh
-/bin/ksh
-/bin/sh
-/bin/tcsh
-/bin/zsh
-</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ cat &#x2F;etc&#x2F;shells
+&#x2F;bin&#x2F;bash  
+&#x2F;bin&#x2F;csh
+&#x2F;bin&#x2F;ksh
+&#x2F;bin&#x2F;sh
+&#x2F;bin&#x2F;tcsh
+&#x2F;bin&#x2F;zsh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>bash</strong>这个是目前大多数Linux系统默认使用的shell，全名是BourneAgain Shell，一共有40个命令。包含的功能几乎可以涵盖shell所具有的功能，所以一般的shell脚本都会指定它为执行路径。</p>
 <p>在 Linux 里执行这个命令和 Mac 略有不同，你会发现 Mac 多了一个 zsh，也就是说 OS X 系统预装了个 zsh，它是什么呢？</p>
 <h4 id="zsh介绍"><a href="#zsh介绍" class="headerlink" title="zsh介绍"></a>zsh介绍</h4><p>zsh 是一款功能强大的 shell 软件，它可以兼容 bash，并且提供了很多高效的改进。它是Linux里最庞大的一种shell，它有84个内部命令，也提供了更为强大的功能:</p>
@@ -250,33 +250,33 @@
 <p>Oh My Zsh只是一个对zsh命令行环境的配置包装框架，但它不提供命令行窗口，更不是一个独立的APP。</p>
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>官网推荐安装方式：</p>
 <p>Via curl:</p>
-<pre><code class="shell">$ sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
-</code></pre>
-<p>Via wget:</p>
-<pre><code class="shell">$ sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;
-</code></pre>
-<p>切换系统shell：</p>
-<pre><code class="shell">$ chsh -s /bin/zsh
-</code></pre>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>zsh的配置文件存在当前用户目录中的.zshrc文件，如果你发现切换了shell之后，以前的配置的环境变量不生效了，可以打开 .zshrc文件，找到：</p>
-<pre><code class="shell"># User configuration
-source ~/.bash_profile
-</code></pre>
-<p>指定配置的环境变量文件，之后运行：</p>
-<pre><code class="shell">source .zshrc
-</code></pre>
-<h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><p>在.zshrc文件中找到主题的配置项</p>
-<pre><code class="shell"># Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
-# it&#39;ll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-ZSH_THEME=&quot;ys&quot;
-</code></pre>
+<p>Via wget:</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ sh -c &quot;$(wget https:&#x2F;&#x2F;raw.github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;master&#x2F;tools&#x2F;install.sh -O -)&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>切换系统shell：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ chsh -s &#x2F;bin&#x2F;zsh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>zsh的配置文件存在当前用户目录中的.zshrc文件，如果你发现切换了shell之后，以前的配置的环境变量不生效了，可以打开 .zshrc文件，找到：</p>
+ <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># User configuration
+source ~&#x2F;.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>指定配置的环境变量文件，之后运行：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h4><p>在.zshrc文件中找到主题的配置项</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># Set name of the theme to load. Optionally, if you set this to &quot;random&quot;
+# it&#39;ll load a random theme each time that oh-my-zsh is loaded.
+# See https:&#x2F;&#x2F;github.com&#x2F;robbyrussell&#x2F;oh-my-zsh&#x2F;wiki&#x2F;Themes
+
+ZSH_THEME&#x3D;&quot;ys&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>这里可以设置主题的名字，那么这些主题的名字从哪里找呢？<br>进入Oh My Zsh的配置目录中：</p>
-<pre><code class="shell">ls /home/用户/.oh-my-zsh/themes
-</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls &#x2F;home&#x2F;用户&#x2F;.oh-my-zsh&#x2F;themes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>可以看到内置了许多主题，根据主题文件的名字替换就可以了；</p>
-<pre><code class="shell">3den.zsh-theme                essembeh.zsh-theme            junkfood.zsh-theme            rgm.zsh-theme
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">3den.zsh-theme                essembeh.zsh-theme            junkfood.zsh-theme            rgm.zsh-theme
 Soliah.zsh-theme              evan.zsh-theme                kafeitu.zsh-theme             risto.zsh-theme
 adben.zsh-theme               example.zsh-theme             kardan.zsh-theme              rixius.zsh-theme
 af-magic.zsh-theme            fino-time.zsh-theme           kennethreitz.zsh-theme        rkj-repos.zsh-theme
@@ -285,13 +285,13 @@ agnoster.zsh-theme            fishy.zsh-theme               kolo.zsh-theme      
 alanpeabody.zsh-theme         flazz.zsh-theme               kphoen.zsh-theme              sammy.zsh-theme
 amuse.zsh-theme               fletcherm.zsh-theme           lambda.zsh-theme              simonoff.zsh-theme
 apple.zsh-theme               fox.zsh-theme                 linuxonly.zsh-theme           simple.zsh-theme
-arrow.zsh-theme               frisk.zsh-theme               lukerandall.zsh-theme         skaro.zsh-theme
-</code></pre>
+arrow.zsh-theme               frisk.zsh-theme               lukerandall.zsh-theme         skaro.zsh-theme<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>或者我们将主题设置为随机(‘random’)，每次打开命令行窗口，都会随机在默认主题中选择一个，如果遇到你喜欢的主题，可以输入命令查看其名字：</p>
-<pre><code class="shell">$ echo $ZSH_THEME
-</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ echo $ZSH_THEME<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h4 id="插件开启"><a href="#插件开启" class="headerlink" title="插件开启"></a>插件开启</h4><p>Oh My Zsh 默认自带了一些默认主题，存放在~&#x2F;.oh-my-zsh&#x2F;plugins目录中。我们可以查看这些插件</p>
-<pre><code class="shell">$ ls ~/.oh-my-zsh/plugins
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ ls ~&#x2F;.oh-my-zsh&#x2F;plugins
 
 adb               brew         coffee             dirpersist      fastfile         gitignore                 httpie     last-working-dir  nanoc                  pod         rebar       sprunge        terminitor  vault              zeus
 ant               brew-cask    colemak            django          fbterm           git-prompt                iwhois     lein              nmap                   postgres    redis-cli   ssh-agent      terraform   vim-interaction    zsh-navigation-tools
@@ -307,75 +307,73 @@ bbedit            celery       cp                 encode64        gitfast       
 bgnotify          chruby       cpanm              extract         git-flow         gulp                      knife_ssh  mosh              perl                   rake-fast   scw         systemadmin    tugboat     yii
 boot2docker       chucknorris  debian             fabric          git-flow-avh     heroku                    laravel    mvn               phing                  rand-quote  sfffe       systemd        ubuntu      yii2
 bower             cloudapp     dircycle           fancy-ctrl-z    github           history                   laravel4   mysql-macports    pip                    rbenv       singlechar  taskwarrior    urltools    yum
-branch            codeclimate  dirhistory         fasd            git-hubflow      history-substring-search  laravel5   n98-magerun       pj                     rbfu        spring      terminalapp    vagrant     z
-</code></pre>
+branch            codeclimate  dirhistory         fasd            git-hubflow      history-substring-search  laravel5   n98-magerun       pj                     rbfu        spring      terminalapp    vagrant     z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>我们打开.zshrc配置文件,定位到plugins</p>
-<pre><code class="shell">plugins=(
-   git )
-</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">plugins&#x3D;(
+   git )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>可以看到默认只开启了git插件，我们可以将要使用的插件的名字以空格相隔接在后面就可以了，比如：</p>
-<pre><code class="shell"> plugins=(
-   git adb)
-</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">plugins&#x3D;(
+  git adb)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>如果我们要下载第三方的插件，只需要把插件下载存放到~&#x2F;.oh-my-zsh&#x2F;plugins中，然后在上面加上插件的名字即可；</p>
 <h4 id="推荐插件"><a href="#推荐插件" class="headerlink" title="推荐插件"></a>推荐插件</h4><p><strong>incr</strong> </p>
 <p>这是一款自动提示插件，功能非常强大。必备！</p>
 <p>安装：</p>
-<pre><code class="shell">wget http://mimosa-pudica.net/src/incr-0.2.zsh
-mkdir ~/.oh-my-zsh/plugins/incr
-mv incr-0.2.zsh ~/.oh-my-zsh/plugins/incr
-echo &#39;source ~/.oh-my-zsh/plugins/incr/incr*.zsh&#39; &gt;&gt; ~/.zshrc
-source ~/.zshrc
-</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget http:&#x2F;&#x2F;mimosa-pudica.net&#x2F;src&#x2F;incr-0.2.zsh
+mkdir ~&#x2F;.oh-my-zsh&#x2F;plugins&#x2F;incr
+mv incr-0.2.zsh ~&#x2F;.oh-my-zsh&#x2F;plugins&#x2F;incr
+echo &#39;source ~&#x2F;.oh-my-zsh&#x2F;plugins&#x2F;incr&#x2F;incr*.zsh&#39; &gt;&gt; ~&#x2F;.zshrc
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>zsh-autosuggestions</strong></p>
 <p>这是一个命令自动补全插件，当你输入命令的几个字母，它会自动根据历史输入进行自动补全，然后按<code>→</code>键。</p>
 <p>安装：</p>
-<pre><code class="shell"># 1.克隆到插件目录:
-$ git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 1.克隆到插件目录:
+$ git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $ZSH_CUSTOM&#x2F;plugins&#x2F;zsh-autosuggestions
 # 2.修改配置文件.zshrc:
-$ vim ~/.zshrc
+$ vim ~&#x2F;.zshrc
 # 加入插件列表
-plugins=(
+plugins&#x3D;(
   git
   zsh-autosuggestions
 )
 # 使立刻生效
-source ~/.zshrc
-</code></pre>
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>zsh-syntax-highlighting</strong></p>
 <p>这个插件的主要作用就是在提高颜值（高亮你的zsh可用命令），输入为绿色时表示可用命令，路径带有下划线时表示可用路径。</p>
 <p>安装：</p>
-<pre><code class="shell"># 1.克隆到插件目录：
-$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 1.克隆到插件目录：
+$ git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting
 # 2.修改配置文件.zshrc:
-$ vim ~/.zshrc
+$ vim ~&#x2F;.zshrc
 # 加入插件列表
-plugins=(
+plugins&#x3D;(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 # 使立刻生效
-source ~/.zshrc
-</code></pre>
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>autoswitch_virtualenv</strong></p>
 <p>这个插件对于Python开发者来说可以算是神器了，在实际开发过程中，基本上一个Python项目就对应了一个新的虚拟环境，如果你使用<code>pipenv</code>，当你需要进入项目的虚拟环境时候，就需要执行<code>pipenv shell</code>命令，安装<code>autoswitch_virtualenv</code>后，该插件可以自动地完成这些事情。</p>
 <p>安装：</p>
-<pre><code class="shell">git clone &quot;https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git&quot; &quot;$ZSH_CUSTOM/plugins/autoswitch_virtualenv&quot;
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git clone &quot;https:&#x2F;&#x2F;github.com&#x2F;MichaelAquilina&#x2F;zsh-autoswitch-virtualenv.git&quot; &quot;$ZSH_CUSTOM&#x2F;plugins&#x2F;autoswitch_virtualenv&quot;
 
-vim ~/.zshrc
+vim ~&#x2F;.zshrc
 # 加入插件列表
-plugins=(
+plugins&#x3D;(
   git
   zsh-autosuggestions
     autoswitch_virtualenv
 )
-source ~/.zshrc
-</code></pre>
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>解决使用agnoster主题乱码</strong></p>
-<pre><code class="shell"># 安装字体
-$ sudo apt-get install fonts-powerline
-</code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 安装字体
+$ sudo apt-get install fonts-powerline<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>引用： </p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/monsterdev/p/11166720.html">Oh-My-Zsh的配置与使用</a></p>
 <p>[oh-my-zsh：让终端飞](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/62501175">oh-my-zsh：让终端飞 - 知乎 (zhihu.com)</a>)</p>
