@@ -89,10 +89,9 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2022/03/11/%E5%8F%8D%E5%B0%84/</url>
-    <content><![CDATA[<p>title: Java-反射<br>date: 2022-03-01 17:15:54<br>preview: 50<br>tags: [java]<br>categories: Java<br>description: 反射就是Reflection，Java的反射是指程序在运行期可以拿到一个对象的所有信息。</p>
-<p>什么是反射？</p>
+    <title>Java-反射</title>
+    <url>/2022/03/01/%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<p>什么是反射？</p>
 <p>反射就是Reflection，Java的反射是指程序在运行期可以拿到一个对象的所有信息。</p>
 <p>正常情况下，如果我们要调用一个对象的方法，或者访问一个对象的字段，通常会传入对象实例：</p>
 <figure class="highlight wren"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Main.java</span></span><br><span class="line"><span class="keyword">import</span> <span class="variable">com</span>.<span class="property">itranswarp</span>.<span class="property">learnjava</span>.<span class="property">Person</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="title class_">String</span> <span class="title function_">getFullName</span>(<span class="params">Person</span> <span class="params">p</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">p</span>.<span class="property">getFirstName</span>() <span class="operator">+</span> <span class="string">&quot; &quot;</span> <span class="operator">+</span> <span class="variable">p</span>.<span class="property">getLastName</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -340,5 +339,11 @@
 </ul>
 <p>通过<code>Class</code>对象的<code>isAssignableFrom()</code>方法可以判断一个向上转型是否可以实现。</p>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
 </search>
